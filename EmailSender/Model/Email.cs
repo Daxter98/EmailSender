@@ -9,8 +9,8 @@ namespace EmailSender.Model
     internal class Email
     {
         // Configuracion para la cuenta de correo
-        private readonly string USUARIO = "c41mse@gmail.com";
-        private readonly string PASSWORD = "kynjuevtyhleuwqc";
+        private readonly string USUARIO = "AQUI_VA_USUARIO";
+        private readonly string PASSWORD = "AQUI_VA_PASS";
 
         public string? EmailAddress { get; set; }
         public string? EmailSubject { get; set; }
@@ -24,7 +24,7 @@ namespace EmailSender.Model
                 // Cliente SMTP 
                 SmtpClient smtpClient = new("smtp.gmail.com");
 
-                message.From = new MailAddress("c41mse@gmail.com");
+                message.From = new MailAddress(USUARIO);
                 message.To.Add(EmailAddress);
                 message.Subject = EmailSubject;
                 message.Body = EmailBody;
